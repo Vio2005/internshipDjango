@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    table{
+        border-collapse: collapse;
+        width: 100%;
+    }
+     td{
+        
+        padding:10px;
+        text-align: center;
+     }
+     .tbhead{
+        height: 60px;
+     }
+    </style>
+</head>
+
+<body>
+    <table border="1" >
+    <tr class="tbhead">
+        <th>Name</th>
+        <th>Photo</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Date</th>
+    </tr>
+        
+    {% for i in friend_data %} 
+  <tr>
+            <td>{{i.name}}</td>
+            <td><img src="{{i.photo.url}}" height="100px" width="100px"></td>
+            <td>{{i.email}}</td>
+            <td>{{i.phone}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.created}}</td>
+        
+        </tr>  
+    {% endfor %}
+
+</table>
+</body>
+</html>
