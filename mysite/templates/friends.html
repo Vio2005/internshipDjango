@@ -9,6 +9,7 @@
     table{
         border-collapse: collapse;
         width: 100%;
+        border-color:rgb(79, 172, 209) ;
     }
      td{
         
@@ -18,11 +19,15 @@
      .tbhead{
         height: 60px;
      }
+     body{
+        background-color: rgb(231, 244, 250);
+        color:rgb(79, 172, 209);
+     }
     </style>
 </head>
 
 <body>
-    <table border="1" >
+    <table border="2" >
     <tr class="tbhead">
         <th>Name</th>
         <th>Photo</th>
@@ -33,6 +38,8 @@
     </tr>
         
     {% for i in friend_data %} 
+    <!-- <div class="{% cycle 'row1' 'row2' %}" -->
+     
   <tr>
             <td>{{i.name}}</td>
             <td><img src="{{i.photo.url}}" height="100px" width="100px"></td>
@@ -43,7 +50,14 @@
         
         </tr>  
     {% endfor %}
+{% comment %}
+    hello
+    {% endcomment %}
+
 
 </table>
+
+
+
 </body>
 </html>
